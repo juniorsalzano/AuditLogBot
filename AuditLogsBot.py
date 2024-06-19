@@ -24,15 +24,25 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 
 async def print_audit_log(entry):
     channel = bot.get_channel(CHANNEL_ID)
-    time_format = "%Y-%m-%d %H:%M:%S"
-    timestamp = entry.created_at.strftime(time_format)
-    username = entry.user.name
-    message = (f'**Auditlog**\n'
-               f'User: {username}\n'
-               f'Time: {timestamp}\n'
-               f'Entry action: {entry.action}\n'
-               f'Target action: {entry.target}')
-    await channel.send(message)
+    if channel:
+        time_format = "%Y-%m-%d %H:%M:%S"
+        timestamp = entry.created_at.strftime(time_format)
+        username = entry.user.name
+        action = entry.action
+        target = entry.target
+        
+        embed = discord.Embed(
+            title="Audit Log",
+            description=f"User: {username}\n"
+                        f"Time: {timestamp}\n"
+                        f"Entry action: {action}\n"
+                        f"Target action: {target}",
+            color=discord.Color.blue()
+        )
+        
+        embed.set_footer(text="Audit Log Notification")
+        
+        await channel.send(embed=embed)
 
 @bot.event
 async def on_ready():
