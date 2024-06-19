@@ -5,6 +5,9 @@ from dotenv import load_dotenv
 import asyncio
 import json
 from datetime import timedelta
+from PIL import Image, ImageDraw
+import requests
+from io import BytesIO
 
 load_dotenv()
 
@@ -26,6 +29,22 @@ intents.message_content = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
 
+def make_avatar_round(image_url):
+    response = requests.get(image_url)
+    img = Image.open(BytesIO(response.content)).convert("RGBA")
+    size = (128, 128)
+    img = img.resize(size, Image.LANCZOS)
+    
+    mask = Image.new('L', size, 0)
+    draw = ImageDraw.Draw(mask)
+    draw.ellipse((0, 0) + size, fill=255)
+    img.putalpha(mask)
+
+    output = BytesIO()
+    img.save(output, format='PNG')
+    output.seek(0)
+    return discord.File(fp=output, filename="avatar.png")
+
 async def print_audit_log(entry):
     channel = bot.get_channel(CHANNEL_ID)
     if channel:
@@ -37,28 +56,31 @@ async def print_audit_log(entry):
         adjusted_timestamp = original_timestamp + timedelta(hours=timezone_offset)
         
         timestamp = adjusted_timestamp.strftime(time_format)
-        # username = entry.user.name
         action = entry.action
         target = entry.target
+        changes = entry.changes if entry.changes else "No changes"
         
         # Get user's avatar URL or default avatar URL
         user_avatar_url = entry.user.avatar.url if entry.user.avatar else entry.user.default_avatar.url
         user_mention = entry.user.mention  # Mention the user (@username)
         
+        file = make_avatar_round(user_avatar_url)
+
         embed = discord.Embed(
             title="Audit Log",
-            description=f"User: {user_mention}\n"  # Mention the user
-                        # f"Username: {username} \n"
-                        f"Time: {timestamp} UTC {timezone_offset:+}\n"  # Display the offset
-                        f"Entry action: {action}\n"
-                        f"Target action: {target}\n",
+            description=(
+                f"User: {user_mention}\n"
+                f"Time: {timestamp} UTC {timezone_offset:+}\n"
+                f"Entry action: {action}\n"
+                f"Target action: {target}\n"
+                f"Changes: \n{changes}\n"
+            ),
             color=discord.Color.from_rgb(config['color']['audit_log']['r'], config['color']['audit_log']['g'], config['color']['audit_log']['b'])
         )
         
-        embed.set_thumbnail(url=user_avatar_url)  # Set user's avatar as thumbnail
-        # embed.set_footer(text="Made by L5n")
+        embed.set_thumbnail(url="attachment://avatar.png")  # Set user's avatar as thumbnail
         
-        await channel.send(embed=embed)
+        await channel.send(embed=embed, file=file)
 
 @bot.event
 async def on_ready():
