@@ -31,15 +31,19 @@ async def print_audit_log(entry):
         action = entry.action
         target = entry.target
         
+        user_avatar_url = entry.user.avatar.url if entry.user.avatar else entry.user.default_avatar.url  # Get user's avatar URL or default avatar URL
+        user_profile_url = f"https://discord.com/users/{entry.user.id}"  # Construct user profile URL
+        
         embed = discord.Embed(
             title="Audit Log",
-            description=f"User: {username}\n"
+            description=f"User: [{username}]({user_profile_url})\n"  # Make username clickable
                         f"Time: {timestamp}\n"
                         f"Entry action: {action}\n"
                         f"Target action: {target}",
             color=discord.Color.blue()
         )
         
+        embed.set_thumbnail(url=user_avatar_url)  # Set user's avatar as thumbnail
         embed.set_footer(text="Audit Log Notification")
         
         await channel.send(embed=embed)
