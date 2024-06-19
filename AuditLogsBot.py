@@ -2,14 +2,18 @@ import os
 import discord
 from discord.ext import commands
 from dotenv import load_dotenv
-from datetime import datetime
 import asyncio
+import json
 
 load_dotenv()
 
 TOKEN = os.getenv('TOKEN')
 CHANNEL_ID = int(os.getenv('CHANNEL_ID'))
 AUDIT_LOG_PREFIX = "[Audit Log]"
+
+# Load configuration from config.json
+with open('config.json', 'r') as f:
+    config = json.load(f)
 
 intents = discord.Intents.default()
 intents.guilds = True
@@ -31,20 +35,21 @@ async def print_audit_log(entry):
         action = entry.action
         target = entry.target
         
-        user_avatar_url = entry.user.avatar.url if entry.user.avatar else entry.user.default_avatar.url  # Get user's avatar URL or default avatar URL
-        user_profile_url = f"https://discord.com/users/{entry.user.id}"  # Construct user profile URL
+        # Get user's avatar URL or default avatar URL
+        user_avatar_url = entry.user.avatar.url if entry.user.avatar else entry.user.default_avatar.url
+        user_mention = entry.user.mention  # Mention the user (@username)
         
         embed = discord.Embed(
             title="Audit Log",
-            description=f"User: [{username}]({user_profile_url})\n"  # Make username clickable
+            description=f"User: {user_mention}\n"  # Mention the user
                         f"Time: {timestamp}\n"
                         f"Entry action: {action}\n"
-                        f"Target action: {target}",
-            color=discord.Color.blue()
+                        f"Target action: {target}\n",
+            color=discord.Color.from_rgb(config['color']['audit_log']['r'], config['color']['audit_log']['g'], config['color']['audit_log']['b'])
         )
         
         embed.set_thumbnail(url=user_avatar_url)  # Set user's avatar as thumbnail
-        embed.set_footer(text="Audit Log Notification")
+        embed.set_footer(text="Made by L5n")
         
         await channel.send(embed=embed)
 
