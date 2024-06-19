@@ -8,6 +8,7 @@ from datetime import timedelta
 from PIL import Image, ImageDraw
 import requests
 from io import BytesIO
+from commands import setup as commands_setup, ignored_users
 
 load_dotenv()
 
@@ -27,7 +28,7 @@ intents.guild_reactions = True
 intents.typing = False
 intents.message_content = True
 
-bot = commands.Bot(command_prefix='!', intents=intents)
+bot = commands.Bot(command_prefix='?', intents=intents)
 
 def make_avatar_round(image_url):
     response = requests.get(image_url)
@@ -46,6 +47,10 @@ def make_avatar_round(image_url):
     return discord.File(fp=output, filename="avatar.png")
 
 async def print_audit_log(entry):
+    # Check if the user is in the ignored list
+    if entry.user.id in ignored_users:
+        return
+
     channel = bot.get_channel(CHANNEL_ID)
     if channel:
         time_format = "%Y-%m-%d %H:%M:%S"
@@ -106,4 +111,5 @@ async def get_audit_logs(guild, limit=None):
         entries.append(entry)
     return entries
 
+commands_setup(bot)
 bot.run(TOKEN)
