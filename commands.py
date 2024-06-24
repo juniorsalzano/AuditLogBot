@@ -4,7 +4,7 @@ import json
 import os
 
 # Define the file path for storing ignored user IDs
-IGNORED_USERS_FILE = 'ignored_users.json'
+IGNORED_USERS_FILE = 'scripts/ignored_users.json'
 
 # Load ignored user IDs from the JSON file
 def load_ignored_users():

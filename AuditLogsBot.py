@@ -16,7 +16,7 @@ TOKEN = os.getenv('TOKEN')
 CHANNEL_ID = int(os.getenv('CHANNEL_ID'))
 
 # Load configuration from config.json
-with open('config.json', 'r') as f:
+with open('scripts/config.json', 'r') as f:
     config = json.load(f)
 
 intents = discord.Intents.default()
@@ -102,7 +102,7 @@ async def on_guild_audit_log_task():
             if new_entry.id != last_entry_id:
                 await print_audit_log(new_entry)
                 last_entry_id = new_entry.id
-        await asyncio.sleep(1)  # Wait for 1 second before checking for new entries
+        await asyncio.sleep(3)  # Wait for 1 second before checking for new entries
 
 async def get_audit_logs(guild, limit=None):
     audit_logs = guild.audit_logs(limit=limit)
