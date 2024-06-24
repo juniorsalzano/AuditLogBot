@@ -10,3 +10,11 @@ CHANNEL_ID=YOUR_CHANNEL_ID
 ## How it looks
 
 ![Alt text](img/image.png)
+
+## Commands
+
+| Command | Syntax |
+|---|---|
+| ?ignore | ?ignore @user |
+| ?unignore | ?unignore @user |
+| ?list | ?list |
