@@ -8,7 +8,8 @@ from datetime import timedelta
 from PIL import Image, ImageDraw
 import requests
 from io import BytesIO
-from commands import setup as commands_setup, ignored_users
+from py.commands import setup as commands_setup, ignored_users  # Import the setup function and ignored_users list
+from py.color import get_embed_color  # Import the get_embed_color function
 
 load_dotenv()
 
@@ -45,28 +46,6 @@ def make_avatar_round(image_url):
     img.save(output, format='PNG')
     output.seek(0)
     return discord.File(fp=output, filename="avatar.png")
-
-def get_embed_color(action):
-    action_colors = {
-        discord.AuditLogAction.message_delete: discord.Color.red(),
-        discord.AuditLogAction.message_bulk_delete: discord.Color.dark_red(),
-        discord.AuditLogAction.message_pin: discord.Color.blue(),
-        discord.AuditLogAction.message_unpin: discord.Color.dark_blue(),
-        discord.AuditLogAction.role_create: discord.Color.green(),
-        discord.AuditLogAction.role_update: discord.Color.orange(),
-        discord.AuditLogAction.role_delete: discord.Color.dark_orange(),
-        discord.AuditLogAction.kick: discord.Color.magenta(),
-        discord.AuditLogAction.ban: discord.Color.dark_red(),
-        discord.AuditLogAction.unban: discord.Color.dark_green(),
-        discord.AuditLogAction.member_update: discord.Color.purple(),
-        discord.AuditLogAction.member_role_update: discord.Color.dark_orange(),
-        discord.AuditLogAction.channel_create: discord.Color.teal(),
-        discord.AuditLogAction.channel_update: discord.Color.gold(),
-        discord.AuditLogAction.channel_delete: discord.Color.dark_blue(),
-        discord.AuditLogAction.guild_update: discord.Color.light_grey(),
-        # Add more actions and their colors here
-    }
-    return action_colors.get(action, discord.Color.from_rgb(config['color']['audit_log']['r'], config['color']['audit_log']['g'], config['color']['audit_log']['b']))
 
 async def print_audit_log(entry):
     # Check if the user is in the ignored list
