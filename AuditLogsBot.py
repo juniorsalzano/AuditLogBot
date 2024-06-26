@@ -44,6 +44,22 @@ async def on_guild_audit_log_task():
                 last_entry_id = new_entry.id
         await asyncio.sleep(3)  # Wait for 3 seconds before checking for new entries
 
+async def get_audit_logs(guild, limit=None, retries=3, delay=5):
+    while retries > 0:
+        try:
+            audit_logs = guild.audit_logs(limit=limit)
+            entries = []
+            async for entry in audit_logs:
+                entries.append(entry)
+            return entries
+        except discord.errors.DiscordServerError as e:
+            if e.status == 503:
+                retries -= 1
+                await asyncio.sleep(delay)
+            else:
+                raise
+    raise Exception("Failed to fetch audit logs after multiple retries")
+
 async def get_audit_logs(guild, limit=None):
     audit_logs = guild.audit_logs(limit=limit)
     entries = []
