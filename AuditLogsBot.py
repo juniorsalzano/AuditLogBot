@@ -6,6 +6,7 @@ import asyncio
 import json
 from py.commands import setup as commands_setup  # Import the setup function and ignored_users list
 from py.utils import print_audit_log, make_avatar_round  # Import utility functions
+from py.custom_help import setup as help_setup  # Import custom help command setup
 
 load_dotenv()
 
@@ -25,7 +26,7 @@ intents.guild_reactions = True
 intents.typing = False
 intents.message_content = True
 
-bot = commands.Bot(command_prefix='?', intents=intents)
+bot = commands.Bot(command_prefix='&', intents=intents)
 
 @bot.event
 async def on_ready():
@@ -60,12 +61,7 @@ async def get_audit_logs(guild, limit=None, retries=3, delay=5):
                 raise
     raise Exception("Failed to fetch audit logs after multiple retries")
 
-async def get_audit_logs(guild, limit=None):
-    audit_logs = guild.audit_logs(limit=limit)
-    entries = []
-    async for entry in audit_logs:
-        entries.append(entry)
-    return entries
-
 commands_setup(bot)
+help_setup(bot)  # Set up the custom help command
+
 bot.run(TOKEN)
