@@ -51,6 +51,7 @@ def role_check():
 
 # Command definitions
 @commands.command(help="Sets the required role to use restricted commands. Usage: &setrole @RoleName")
+@commands.has_permissions(administrator=True)
 async def setrole(ctx, role: discord.Role):
     global required_role_id
 
@@ -96,8 +97,6 @@ async def list(ctx):
         await ctx.send("Ignored users:\n" + "\n".join(ignored_mentions))
     else:
         await ctx.send("No users are currently ignored.")
-
-
 
 def setup(bot):
     bot.add_command(setrole)
