@@ -89,6 +89,9 @@ async def get_audit_logs(guild, limit=None, retries=3, delay=5):
             raise
     raise Exception("Failed to fetch audit logs after multiple retries")
 
+# Buffer for logging
+log_buffer = []
+
 @tasks.loop(seconds=1)
 async def monitor_resources():
     # Monitor CPU and memory usage
@@ -96,8 +99,17 @@ async def monitor_resources():
     cpu_usage = psutil.cpu_percent(interval=None)
     memory_usage = process.memory_info().rss / 1024 / 1024  # Convert to MB
 
-    logger.info(f"CPU usage: {cpu_usage}%")
-    logger.info(f"Memory usage: {memory_usage:.2f} MB")
+    log_buffer.append(f"CPU usage: {cpu_usage}%")
+    log_buffer.append(f"Memory usage: {memory_usage:.2f} MB")
+
+    if len(log_buffer) >= 60:  # Assuming one log per second
+        flush_logs()
+
+def flush_logs():
+    global log_buffer
+    for log_entry in log_buffer:
+        logger.info(log_entry)
+    log_buffer = []
 
 commands_setup(bot)
 help_setup(bot)  # Set up the custom help command

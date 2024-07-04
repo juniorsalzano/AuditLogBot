@@ -1,130 +1,184 @@
-2024-07-04 08:35:51,490:WARNING:discord.client: PyNaCl is not installed, voice will NOT be supported
-2024-07-04 08:35:51,491:INFO:discord.client: logging in using static token
-2024-07-04 08:35:52,475:INFO:discord.gateway: Shard ID None has connected to Gateway (Session ID: 0adbdd21b78d0e1bd525adbbabc735d6).
-2024-07-04 08:35:54,513:INFO:discord: Bot is ready.
-2024-07-04 08:35:54,516:INFO:discord: CPU usage: 5.3%
-2024-07-04 08:35:54,516:INFO:discord: Memory usage: 67.41 MB
-2024-07-04 08:35:55,520:INFO:discord: CPU usage: 3.2%
-2024-07-04 08:35:55,521:INFO:discord: Memory usage: 69.24 MB
-2024-07-04 08:35:56,518:INFO:discord: CPU usage: 1.2%
-2024-07-04 08:35:56,519:INFO:discord: Memory usage: 69.24 MB
-2024-07-04 08:35:57,515:INFO:discord: CPU usage: 1.2%
-2024-07-04 08:35:57,516:INFO:discord: Memory usage: 69.24 MB
-2024-07-04 08:35:58,518:INFO:discord: CPU usage: 3.3%
-2024-07-04 08:35:58,519:INFO:discord: Memory usage: 69.24 MB
-2024-07-04 08:35:59,526:INFO:discord: CPU usage: 4.8%
-2024-07-04 08:35:59,527:INFO:discord: Memory usage: 69.24 MB
-2024-07-04 08:36:00,510:INFO:discord: CPU usage: 2.8%
-2024-07-04 08:36:00,511:INFO:discord: Memory usage: 69.24 MB
-2024-07-04 08:36:01,504:INFO:discord: CPU usage: 2.3%
-2024-07-04 08:36:01,505:INFO:discord: Memory usage: 69.24 MB
-2024-07-04 08:36:02,516:INFO:discord: CPU usage: 1.0%
-2024-07-04 08:36:02,517:INFO:discord: Memory usage: 69.24 MB
-2024-07-04 08:36:03,523:INFO:discord: CPU usage: 1.6%
-2024-07-04 08:36:03,524:INFO:discord: Memory usage: 69.24 MB
-2024-07-04 08:36:04,511:INFO:discord: CPU usage: 1.9%
-2024-07-04 08:36:04,512:INFO:discord: Memory usage: 69.24 MB
-2024-07-04 08:36:05,513:INFO:discord: CPU usage: 1.8%
-2024-07-04 08:36:05,514:INFO:discord: Memory usage: 69.24 MB
-2024-07-04 08:36:06,523:INFO:discord: CPU usage: 1.5%
-2024-07-04 08:36:06,524:INFO:discord: Memory usage: 69.24 MB
-2024-07-04 08:36:07,519:INFO:discord: CPU usage: 0.7%
-2024-07-04 08:36:07,520:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:08,520:INFO:discord: CPU usage: 2.7%
-2024-07-04 08:36:08,524:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:09,519:INFO:discord: CPU usage: 3.0%
-2024-07-04 08:36:09,520:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:10,513:INFO:discord: CPU usage: 6.7%
-2024-07-04 08:36:10,514:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:11,507:INFO:discord: CPU usage: 6.0%
-2024-07-04 08:36:11,508:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:12,521:INFO:discord: CPU usage: 6.8%
-2024-07-04 08:36:12,522:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:13,521:INFO:discord: CPU usage: 4.6%
-2024-07-04 08:36:13,522:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:14,510:INFO:discord: CPU usage: 2.8%
-2024-07-04 08:36:14,511:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:15,505:INFO:discord: CPU usage: 3.5%
-2024-07-04 08:36:15,506:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:16,519:INFO:discord: CPU usage: 1.8%
-2024-07-04 08:36:16,520:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:17,510:INFO:discord: CPU usage: 0.8%
-2024-07-04 08:36:17,511:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:18,513:INFO:discord: CPU usage: 8.7%
-2024-07-04 08:36:18,513:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:19,509:INFO:discord: CPU usage: 5.1%
-2024-07-04 08:36:19,510:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:20,515:INFO:discord: CPU usage: 1.9%
-2024-07-04 08:36:20,516:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:21,522:INFO:discord: CPU usage: 1.2%
-2024-07-04 08:36:21,523:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:22,522:INFO:discord: CPU usage: 1.3%
-2024-07-04 08:36:22,523:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:23,517:INFO:discord: CPU usage: 1.6%
-2024-07-04 08:36:23,518:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:24,524:INFO:discord: CPU usage: 1.3%
-2024-07-04 08:36:24,525:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:25,515:INFO:discord: CPU usage: 1.4%
-2024-07-04 08:36:25,516:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:26,529:INFO:discord: CPU usage: 1.3%
-2024-07-04 08:36:26,530:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:27,526:INFO:discord: CPU usage: 1.8%
-2024-07-04 08:36:27,527:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:28,507:INFO:discord: CPU usage: 0.9%
-2024-07-04 08:36:28,508:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:29,520:INFO:discord: CPU usage: 2.4%
-2024-07-04 08:36:29,521:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:30,511:INFO:discord: CPU usage: 2.0%
-2024-07-04 08:36:30,512:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:31,513:INFO:discord: CPU usage: 3.8%
-2024-07-04 08:36:31,514:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:32,503:INFO:discord: CPU usage: 1.0%
-2024-07-04 08:36:32,504:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:33,514:INFO:discord: CPU usage: 1.7%
-2024-07-04 08:36:33,515:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:34,528:INFO:discord: CPU usage: 2.7%
-2024-07-04 08:36:34,529:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:35,517:INFO:discord: CPU usage: 1.7%
-2024-07-04 08:36:35,518:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:36,528:INFO:discord: CPU usage: 1.7%
-2024-07-04 08:36:36,529:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:37,513:INFO:discord: CPU usage: 2.4%
-2024-07-04 08:36:37,514:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:38,517:INFO:discord: CPU usage: 4.0%
-2024-07-04 08:36:38,518:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:39,517:INFO:discord: CPU usage: 2.2%
-2024-07-04 08:36:39,518:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:40,517:INFO:discord: CPU usage: 11.6%
-2024-07-04 08:36:40,518:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:41,520:INFO:discord: CPU usage: 1.7%
-2024-07-04 08:36:41,523:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:42,510:INFO:discord: CPU usage: 2.0%
-2024-07-04 08:36:42,512:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:43,504:INFO:discord: CPU usage: 21.8%
-2024-07-04 08:36:43,505:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:44,515:INFO:discord: CPU usage: 9.2%
-2024-07-04 08:36:44,516:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:45,525:INFO:discord: CPU usage: 2.1%
-2024-07-04 08:36:45,526:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:46,513:INFO:discord: CPU usage: 0.7%
-2024-07-04 08:36:46,513:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:47,507:INFO:discord: CPU usage: 0.9%
-2024-07-04 08:36:47,508:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:48,520:INFO:discord: CPU usage: 1.8%
-2024-07-04 08:36:48,521:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:49,522:INFO:discord: CPU usage: 1.0%
-2024-07-04 08:36:49,523:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:50,510:INFO:discord: CPU usage: 2.6%
-2024-07-04 08:36:50,510:INFO:discord: Memory usage: 69.25 MB
-2024-07-04 08:36:51,512:INFO:discord: CPU usage: 1.2%
-2024-07-04 08:36:51,512:INFO:discord: Memory usage: 69.21 MB
-2024-07-04 08:36:52,503:INFO:discord: CPU usage: 1.2%
-2024-07-04 08:36:52,504:INFO:discord: Memory usage: 69.21 MB
-2024-07-04 08:36:53,543:INFO:discord: CPU usage: 3.4%
-2024-07-04 08:36:53,545:INFO:discord: Memory usage: 69.21 MB
-2024-07-04 08:36:54,510:INFO:discord: CPU usage: 1.7%
-2024-07-04 08:36:54,511:INFO:discord: Memory usage: 69.21 MB
-2024-07-04 08:36:55,508:INFO:discord: CPU usage: 2.1%
-2024-07-04 08:36:55,508:INFO:discord: Memory usage: 69.21 MB
-2024-07-04 08:36:56,518:INFO:discord: CPU usage: 0.9%
-2024-07-04 08:36:56,519:INFO:discord: Memory usage: 69.21 MB
+2024-07-04 08:39:23,459:WARNING:discord.client: PyNaCl is not installed, voice will NOT be supported
+2024-07-04 08:39:23,462:INFO:discord.client: logging in using static token
+2024-07-04 08:39:24,395:INFO:discord.gateway: Shard ID None has connected to Gateway (Session ID: d4c28a235277c38b58dc620d11c2f49e).
+2024-07-04 08:39:26,571:INFO:discord: Bot is ready.
+2024-07-04 08:39:55,559:INFO:discord: CPU usage: 2.8%
+2024-07-04 08:39:55,560:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:39:55,561:INFO:discord: CPU usage: 1.2%
+2024-07-04 08:39:55,561:INFO:discord: Memory usage: 67.67 MB
+2024-07-04 08:39:55,562:INFO:discord: CPU usage: 1.0%
+2024-07-04 08:39:55,562:INFO:discord: Memory usage: 67.67 MB
+2024-07-04 08:39:55,563:INFO:discord: CPU usage: 3.0%
+2024-07-04 08:39:55,563:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,564:INFO:discord: CPU usage: 0.9%
+2024-07-04 08:39:55,565:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,565:INFO:discord: CPU usage: 1.6%
+2024-07-04 08:39:55,566:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,566:INFO:discord: CPU usage: 5.6%
+2024-07-04 08:39:55,567:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,567:INFO:discord: CPU usage: 1.0%
+2024-07-04 08:39:55,568:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,568:INFO:discord: CPU usage: 2.2%
+2024-07-04 08:39:55,568:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,570:INFO:discord: CPU usage: 3.9%
+2024-07-04 08:39:55,571:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,571:INFO:discord: CPU usage: 2.9%
+2024-07-04 08:39:55,572:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,572:INFO:discord: CPU usage: 6.4%
+2024-07-04 08:39:55,573:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,573:INFO:discord: CPU usage: 8.1%
+2024-07-04 08:39:55,574:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,574:INFO:discord: CPU usage: 1.3%
+2024-07-04 08:39:55,575:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,575:INFO:discord: CPU usage: 1.0%
+2024-07-04 08:39:55,576:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,581:INFO:discord: CPU usage: 3.3%
+2024-07-04 08:39:55,582:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,582:INFO:discord: CPU usage: 1.7%
+2024-07-04 08:39:55,583:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,584:INFO:discord: CPU usage: 0.1%
+2024-07-04 08:39:55,584:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,585:INFO:discord: CPU usage: 0.3%
+2024-07-04 08:39:55,585:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,586:INFO:discord: CPU usage: 0.4%
+2024-07-04 08:39:55,586:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,588:INFO:discord: CPU usage: 0.4%
+2024-07-04 08:39:55,588:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,589:INFO:discord: CPU usage: 0.3%
+2024-07-04 08:39:55,589:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,590:INFO:discord: CPU usage: 0.5%
+2024-07-04 08:39:55,590:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,591:INFO:discord: CPU usage: 0.3%
+2024-07-04 08:39:55,591:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,594:INFO:discord: CPU usage: 0.5%
+2024-07-04 08:39:55,594:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,595:INFO:discord: CPU usage: 0.5%
+2024-07-04 08:39:55,596:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,597:INFO:discord: CPU usage: 0.3%
+2024-07-04 08:39:55,597:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,597:INFO:discord: CPU usage: 0.8%
+2024-07-04 08:39:55,598:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,598:INFO:discord: CPU usage: 0.3%
+2024-07-04 08:39:55,599:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:39:55,599:INFO:discord: CPU usage: 1.3%
+2024-07-04 08:39:55,600:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,577:INFO:discord: CPU usage: 1.2%
+2024-07-04 08:40:25,578:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,578:INFO:discord: CPU usage: 1.1%
+2024-07-04 08:40:25,578:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,579:INFO:discord: CPU usage: 2.8%
+2024-07-04 08:40:25,579:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,580:INFO:discord: CPU usage: 10.3%
+2024-07-04 08:40:25,580:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,580:INFO:discord: CPU usage: 4.8%
+2024-07-04 08:40:25,581:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,581:INFO:discord: CPU usage: 1.7%
+2024-07-04 08:40:25,582:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,582:INFO:discord: CPU usage: 4.8%
+2024-07-04 08:40:25,583:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,583:INFO:discord: CPU usage: 16.0%
+2024-07-04 08:40:25,583:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,584:INFO:discord: CPU usage: 16.6%
+2024-07-04 08:40:25,674:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,675:INFO:discord: CPU usage: 1.2%
+2024-07-04 08:40:25,675:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,675:INFO:discord: CPU usage: 0.8%
+2024-07-04 08:40:25,677:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,677:INFO:discord: CPU usage: 0.3%
+2024-07-04 08:40:25,678:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,678:INFO:discord: CPU usage: 2.3%
+2024-07-04 08:40:25,690:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,691:INFO:discord: CPU usage: 0.3%
+2024-07-04 08:40:25,691:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,691:INFO:discord: CPU usage: 6.1%
+2024-07-04 08:40:25,692:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,692:INFO:discord: CPU usage: 5.3%
+2024-07-04 08:40:25,693:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,693:INFO:discord: CPU usage: 6.5%
+2024-07-04 08:40:25,693:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,694:INFO:discord: CPU usage: 5.3%
+2024-07-04 08:40:25,695:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,695:INFO:discord: CPU usage: 7.6%
+2024-07-04 08:40:25,695:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,696:INFO:discord: CPU usage: 11.4%
+2024-07-04 08:40:25,696:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,697:INFO:discord: CPU usage: 2.3%
+2024-07-04 08:40:25,697:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,698:INFO:discord: CPU usage: 5.9%
+2024-07-04 08:40:25,698:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,698:INFO:discord: CPU usage: 4.9%
+2024-07-04 08:40:25,699:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,699:INFO:discord: CPU usage: 8.5%
+2024-07-04 08:40:25,700:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,700:INFO:discord: CPU usage: 5.1%
+2024-07-04 08:40:25,700:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,701:INFO:discord: CPU usage: 1.2%
+2024-07-04 08:40:25,701:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,701:INFO:discord: CPU usage: 1.2%
+2024-07-04 08:40:25,701:INFO:discord: Memory usage: 67.69 MB
+2024-07-04 08:40:25,702:INFO:discord: CPU usage: 0.1%
+2024-07-04 08:40:25,702:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:25,703:INFO:discord: CPU usage: 0.4%
+2024-07-04 08:40:25,703:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:25,704:INFO:discord: CPU usage: 5.9%
+2024-07-04 08:40:25,704:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,566:INFO:discord: CPU usage: 5.8%
+2024-07-04 08:40:55,567:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,568:INFO:discord: CPU usage: 4.1%
+2024-07-04 08:40:55,568:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,569:INFO:discord: CPU usage: 5.7%
+2024-07-04 08:40:55,569:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,570:INFO:discord: CPU usage: 4.5%
+2024-07-04 08:40:55,570:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,571:INFO:discord: CPU usage: 4.2%
+2024-07-04 08:40:55,571:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,572:INFO:discord: CPU usage: 1.6%
+2024-07-04 08:40:55,574:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,574:INFO:discord: CPU usage: 3.0%
+2024-07-04 08:40:55,575:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,576:INFO:discord: CPU usage: 3.1%
+2024-07-04 08:40:55,576:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,578:INFO:discord: CPU usage: 3.6%
+2024-07-04 08:40:55,578:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,579:INFO:discord: CPU usage: 3.5%
+2024-07-04 08:40:55,579:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,599:INFO:discord: CPU usage: 6.2%
+2024-07-04 08:40:55,602:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,602:INFO:discord: CPU usage: 8.9%
+2024-07-04 08:40:55,603:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,604:INFO:discord: CPU usage: 4.9%
+2024-07-04 08:40:55,604:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,605:INFO:discord: CPU usage: 3.1%
+2024-07-04 08:40:55,606:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,606:INFO:discord: CPU usage: 0.4%
+2024-07-04 08:40:55,607:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,607:INFO:discord: CPU usage: 11.3%
+2024-07-04 08:40:55,608:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,608:INFO:discord: CPU usage: 3.4%
+2024-07-04 08:40:55,608:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,609:INFO:discord: CPU usage: 1.2%
+2024-07-04 08:40:55,609:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,610:INFO:discord: CPU usage: 0.3%
+2024-07-04 08:40:55,611:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,612:INFO:discord: CPU usage: 0.5%
+2024-07-04 08:40:55,613:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,613:INFO:discord: CPU usage: 0.4%
+2024-07-04 08:40:55,613:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,614:INFO:discord: CPU usage: 0.4%
+2024-07-04 08:40:55,614:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,615:INFO:discord: CPU usage: 0.7%
+2024-07-04 08:40:55,616:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,616:INFO:discord: CPU usage: 0.1%
+2024-07-04 08:40:55,617:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,617:INFO:discord: CPU usage: 1.0%
+2024-07-04 08:40:55,618:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,618:INFO:discord: CPU usage: 1.1%
+2024-07-04 08:40:55,620:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,621:INFO:discord: CPU usage: 0.7%
+2024-07-04 08:40:55,621:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,622:INFO:discord: CPU usage: 0.9%
+2024-07-04 08:40:55,622:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,623:INFO:discord: CPU usage: 1.2%
+2024-07-04 08:40:55,623:INFO:discord: Memory usage: 67.64 MB
+2024-07-04 08:40:55,624:INFO:discord: CPU usage: 0.7%
+2024-07-04 08:40:55,625:INFO:discord: Memory usage: 67.64 MB
