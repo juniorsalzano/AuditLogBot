@@ -51,7 +51,6 @@ def role_check():
 
 # Command definitions
 @commands.command(help="Sets the required role to use restricted commands. Usage: &setrole @RoleName")
-@commands.has_permissions(administrator=True)
 async def setrole(ctx, role: discord.Role):
     global required_role_id
 
@@ -98,8 +97,56 @@ async def list(ctx):
     else:
         await ctx.send("No users are currently ignored.")
 
+@commands.command(help="Displays the last 5 audit logs from the specified user. Usage: &alf @User")
+async def alf(ctx, user: discord.User):
+    guild = ctx.guild
+    audit_logs = []
+    async for entry in guild.audit_logs(limit=100):
+        if entry.user == user:
+            audit_logs.append(entry)
+
+    if audit_logs:
+        embed = discord.Embed(title=f"Last 5 Audit Logs for {user}", color=discord.Color.blue())
+        for i, entry in enumerate(audit_logs[:5], start=1):  # Get the last 5 entries
+            timestamp = discord.utils.snowflake_time(entry.id).strftime("%Y-%m-%d %H:%M:%S")
+            action = entry.action
+            target = entry.target
+            changes = format_audit_log_changes(entry.changes) if entry.changes else "No changes"
+            embed.add_field(
+                name=f"Audit Log Entry {i} - {timestamp}",
+                value=(
+                    f"**Action:** {action}\n"
+                    f"**Target:** {target}\n"
+                    f"**Changes:**\n{changes}\n"
+                    f"------------------------------------------"
+                ),
+                inline=False
+            )
+        await ctx.send(embed=embed)
+    else:
+        await ctx.send(f"No audit log entries found for {user.mention}.")
+
 def setup(bot):
     bot.add_command(setrole)
     bot.add_command(ignore)
     bot.add_command(unignore)
     bot.add_command(list)
+    bot.add_command(alf)
+
+def format_audit_log_changes(changes):
+    change_list = []
+    try:
+        before = changes.before
+        after = changes.after
+        index = 1
+        for attr in dir(before):
+            if not attr.startswith('_'):
+                before_value = getattr(before, attr, None)
+                after_value = getattr(after, attr, None)
+                before_str = f"None" if before_value is None else str(before_value)
+                after_str = f"None" if after_value is None else str(after_value)
+                change_list.append(f"{index:02d} - **{attr}**: {before_str} -> {after_str}")
+                index += 1
+    except Exception as e:
+        change_list.append(f"Error processing changes: {changes}, Error: {e}")
+    return "\n".join(change_list)
