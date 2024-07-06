@@ -115,10 +115,11 @@ async def alf(ctx, user: discord.User):
             embed.add_field(
                 name=f"Audit Log Entry {i} - {timestamp}",
                 value=(
+                    f"**User:** {user.mention}\n"
                     f"**Action:** {action}\n"
                     f"**Target:** {target}\n"
                     f"**Changes:**\n{changes}\n"
-                    f"------------------------------------------"
+                    f"------"
                 ),
                 inline=False
             )
@@ -135,6 +136,15 @@ def setup(bot):
 
 def format_audit_log_changes(changes):
     change_list = []
+    attribute_mapping = {
+        'name': 'name',
+        'type': 'type',
+        'nsfw': 'NSFW status',
+        'slowmode_delay': 'slowmode delay',
+        'overwrites': 'permission overwrites',
+        'flags': 'flags',
+        'topic': 'topic',
+    }
     try:
         before = changes.before
         after = changes.after
@@ -143,10 +153,21 @@ def format_audit_log_changes(changes):
             if not attr.startswith('_'):
                 before_value = getattr(before, attr, None)
                 after_value = getattr(after, attr, None)
-                before_str = f"None" if before_value is None else str(before_value)
-                after_str = f"None" if after_value is None else str(after_value)
-                change_list.append(f"{index:02d} - **{attr}**: {before_str} -> {after_str}")
-                index += 1
+                if before_value != after_value:  # Only include changes
+                    before_str = "None" if before_value is None else str(before_value)
+                    after_str = "None" if after_value is None else str(after_value)
+
+                    # Map the attribute to a more readable format if available
+                    if attr in attribute_mapping:
+                        attr_display = attribute_mapping[attr]
+                    else:
+                        attr_display = attr.capitalize().replace('_', ' ')
+
+                    if attr == 'type':
+                        after_str = 'Text Channel' if after_value == discord.ChannelType.text else str(after_value)
+
+                    change_list.append(f"{index:02d} - **FROM** `{before_str}`\n{index:02d} - **TO** `{after_str}`")
+                    index += 1
     except Exception as e:
         change_list.append(f"Error processing changes: {changes}, Error: {e}")
     return "\n".join(change_list)
