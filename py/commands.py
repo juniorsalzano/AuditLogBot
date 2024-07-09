@@ -137,37 +137,30 @@ def setup(bot):
 def format_audit_log_changes(changes):
     change_list = []
     attribute_mapping = {
-        'name': 'name',
-        'type': 'type',
-        'nsfw': 'NSFW status',
-        'slowmode_delay': 'slowmode delay',
-        'overwrites': 'permission overwrites',
-        'flags': 'flags',
-        'topic': 'topic',
+        'name': 'Name',
+        'type': 'Type',
+        'nsfw': 'NSFW Status',
+        'slowmode_delay': 'Slowmode Delay',
+        'overwrites': 'Permission Overwrites',
+        'flags': 'Flags',
+        'topic': 'Topic',
     }
     try:
-        before = changes.before
-        after = changes.after
-        index = 1
-        for attr in dir(before):
-            if not attr.startswith('_'):
-                before_value = getattr(before, attr, None)
-                after_value = getattr(after, attr, None)
-                if before_value != after_value:  # Only include changes
-                    before_str = "None" if before_value is None else str(before_value)
-                    after_str = "None" if after_value is None else str(after_value)
+        for change in changes:
+            attr = change.attribute
+            after_value = change.after
+            after_str = str(after_value)
 
-                    # Map the attribute to a more readable format if available
-                    if attr in attribute_mapping:
-                        attr_display = attribute_mapping[attr]
-                    else:
-                        attr_display = attr.capitalize().replace('_', ' ')
+            # Map the attribute to a more readable format if available
+            if attr in attribute_mapping:
+                attr_display = attribute_mapping[attr]
+            else:
+                attr_display = attr.capitalize().replace('_', ' ')
 
-                    if attr == 'type':
-                        after_str = 'Text Channel' if after_value == discord.ChannelType.text else str(after_value)
+            if attr == 'type':
+                after_str = 'Text Channel' if after_value == discord.ChannelType.text else str(after_value)
 
-                    change_list.append(f"{index:02d} - **FROM** `{before_str}`\n{index:02d} - **TO** `{after_str}`")
-                    index += 1
+            change_list.append(f"{len(change_list) + 1:02d} - **{attr_display}**: `{after_str}`")
     except Exception as e:
         change_list.append(f"Error processing changes: {changes}, Error: {e}")
     return "\n".join(change_list)
