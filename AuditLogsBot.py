@@ -25,7 +25,9 @@ logging.basicConfig(
 logger = logging.getLogger('discord')
 
 TOKEN = os.getenv('TOKEN')
-CHANNEL_ID = int(os.getenv('CHANNEL_ID'))
+
+# Load multiple channel IDs from environment variables
+CHANNEL_IDS = list(map(int, os.getenv('CHANNEL_IDS').split(',')))
 
 # Load configuration from config.json
 with open('scripts/config.json', 'r') as f:
@@ -62,12 +64,20 @@ async def on_guild_audit_log_task():
             if new_entries:
                 new_entry = new_entries[0]
                 if new_entry.id != last_entry_id:
-                    await print_audit_log(new_entry, bot, CHANNEL_ID, config)
+                    await send_audit_logs_to_channels(new_entry, bot, CHANNEL_IDS, config)
                     last_entry_id = new_entry.id
         except Exception as e:
             logger.error(f"Error fetching audit logs: {e}")
 
         await asyncio.sleep(1)  # Wait for 1 second before checking for new entries
+
+async def send_audit_logs_to_channels(entry, bot, channel_ids, config):
+    for channel_id in channel_ids:
+        channel = bot.get_channel(channel_id)
+        if channel:
+            await print_audit_log(entry, bot, channel_id, config)
+        else:
+            logger.warning(f"Channel ID {channel_id} not found.")
 
 async def get_audit_logs(guild, limit=None, retries=3, delay=5):
     while retries > 0:
